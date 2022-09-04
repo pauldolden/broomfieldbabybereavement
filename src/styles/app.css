@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .nav-item {
+    @apply border-2 border-yellow rounded-full p-[5px] flex justify-center w-[135px];
+  }
+}

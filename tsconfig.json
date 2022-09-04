@@ -7,7 +7,9 @@
       "@constants/*": ["src/constants/*"],
       "@layouts/*": ["src/layouts/*"],
       "@models/*": ["src/models/*"],
-      "@assets/*": ["src/assets/*"]
+      "@assets/*": ["src/assets/*"],
+      "@styles/*": ["src/styles/*"],
+      "@utils/*": ["src/utils/*"]
     }
   }
 }
