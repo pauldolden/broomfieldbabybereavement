@@ -15,6 +15,7 @@
     "astro": "^1.1.5"
   },
   "devDependencies": {
+    "@astrojs/sitemap": "^1.0.0",
     "@astrojs/tailwind": "^1.0.0"
   }
 }
