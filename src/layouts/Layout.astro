@@ -1,9 +1,13 @@
 ---
-import '@fontsource/poppins'
-import Footer from '../components/Footer.astro';
+import "@fontsource/poppins";
+import "@styles/app.css";
+import { FOOTER_LINKS } from "@constants/navigation";
+import Footer from "@components/Footer.astro";
+import Head from "@components/Head.astro";
+import Header from "@components/Header.svelte";
 
 export interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -11,28 +15,12 @@ const { title } = Astro.props;
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<main>
-			<slot />
-		</main>
-		<Footer columns={[
-			[
-				{ label: "Home", href: "/"},
-				{ label: "About Us", href: "#about"},
-				{ label: "Gallery", href: "#gallery"},
-			],
-			[
-				{ label: "Contact", href: "#contact"},
-				{ label: "Resources", href: "/resources"},
-				{ label: "Where to find us", href: "#find"},
-			],
-		]} />
-	</body>
+  <Head title={title} />
+  <body>
+    <Header client:load />
+    <main>
+      <slot />
+    </main>
+    <Footer columns={FOOTER_LINKS} />
+  </body>
 </html>
