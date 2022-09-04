@@ -1,21 +1,14 @@
 ---
+import About from '@components/About.astro';
+import Find from '@components/Find.astro';
+import Gallery from '@components/Gallery.astro';
+import Hero from '@components/Hero.astro';
 import Layout from '@layouts/Layout.astro';
 ---
 
 <Layout title="Broomfield Baby Bereavement">
-	<section id="hero" class="h-[600px] bg-gradient-to-b from-white to-yellow">
-		<h2>Hero</h2>
-	</section>
-	<section id="about" class="h-[512px]">
-		<h2>About</h2>
-	</section>
-	<section id="gallery" class="h-[512px] bg-yellow">
-		<h2>Gallery</h2>
-	</section>
-	<section id="find" class="h-[384px]">
-		<h2>find</h2>
-	</section>
-	<section id="contact" class="h-[384px]">
-		<h2>contact</h2>
-	</section>
+    <Hero />
+    <About />
+    <Gallery />
+    <Find />
 </Layout>
