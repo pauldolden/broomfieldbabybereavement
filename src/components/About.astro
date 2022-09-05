@@ -1,3 +1,50 @@
-<section id="about" class="h-[512px]">
-  <h2>About</h2>
+---
+import BeeRightAlt from "@components/BeeRightAlt.astro";
+import { Image } from "@astrojs/image/components";
+---
+
+<section id="about" class="py-[60px] relative">
+  <div class="container mx-auto px-10 max-w-7xl">
+    <div class="grid grid-cols-2 grid-rows-2 gap-y-[50px] gap-x-[100px]">
+      <div>
+        <h2 class="section-title">About Us</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et neque
+          sed risus finibus tempor. Pellentesque consectetur ex nec tortor
+          bibendum sagittis. Etiam vehicula lacus sapien. Fusce non finibus
+          lectus. Proin vel ligula sem. Maecenas elementum eget quam ut
+          placerat. Donec maximus convallis interdum. Donec suscipit mattis
+          sapien ac ullamcorper. Integer vestibulum sapien ut ultrices pulvinar.
+        </p>
+      </div>
+      <Image
+        class="rounded-lg"
+        src="/images/about.jpg"
+        alt="About Us"
+        width={500}
+        aspectRatio={500 / 320}
+      />
+      <div>
+        <h2 class="section-title">Our Support</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et neque
+          sed risus finibus tempor. Pellentesque consectetur ex nec tortor
+          bibendum sagittis. Etiam vehicula lacus sapien. Fusce non finibus
+          lectus. Proin vel ligula sem. Maecenas elementum eget quam ut
+          placerat. Donec maximus convallis interdum. Donec suscipit mattis
+          sapien ac ullamcorper. Integer vestibulum sapien ut ultrices pulvinar.
+        </p>
+      </div>
+      <Image
+        class="rounded-lg"
+        src="/images/support.jpg"
+        alt="Our Support"
+        width={500}
+        aspectRatio={500 / 320}
+      />
+    </div>
+  </div>
+  <div class="absolute right-0 bottom-[50px]">
+    <BeeRightAlt />
+  </div>
 </section>

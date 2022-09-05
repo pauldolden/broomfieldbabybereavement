@@ -10,4 +10,8 @@
   .header-base {
     @apply flex-1 bg-yellow-gra-start p-[20px] w-full flex justify-between items-center;
   }
+
+  .section-title {
+    @apply font-bold text-[32px];
+  }
 }
