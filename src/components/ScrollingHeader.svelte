@@ -1,12 +1,14 @@
 <script lang="ts">
+  import { fade } from "svelte/transition";
   import { HEADER_LINKS } from "@constants/navigation";
 </script>
 
 <header
-  class="flex-1 fixed bg-white p-[20px] w-full flex justify-between items-center"
+  transition:fade={{ duration: 300 }}
+  class="flex-1 fixed bg-white p-[20px] w-full flex justify-between items-center shadow-sm"
 >
   <nav class="flex flex-1 justify-between">
-    <div class="">
+    <div>
       <svg
         width="30"
         height="30"
