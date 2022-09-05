@@ -3,7 +3,7 @@
   import StaticHeader from "@components/StaticHeader.svelte";
   import ScrollingHeader from "@components/ScrollingHeader.svelte";
 
-  let isInvIew: boolean;
+  let isInvIew = true;
 
   function handleChange({ detail }: CustomEvent<ObserverEventDetails>) {
     isInvIew = detail.inView;
