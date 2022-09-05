@@ -6,4 +6,8 @@
   .nav-item {
     @apply border-2 border-yellow rounded-full items-center flex justify-center w-[105px] px-[5px] h-[30px] text-[14px] hover:bg-yellow transition-colors;
   }
+
+  .header-base {
+    @apply flex-1 bg-yellow-gra-start p-[20px] w-full flex justify-between items-center;
+  }
 }

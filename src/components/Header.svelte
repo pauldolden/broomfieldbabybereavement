@@ -1,7 +1,7 @@
 <script lang="ts">
   import { inview, Options } from "svelte-inview";
-  import StaticHeader from "@components/StaticHeader.svelte";
-  import ScrollingHeader from "@components/ScrollingHeader.svelte";
+  import { fade } from "svelte/transition";
+  import HeaderNav from "./HeaderNav.svelte";
 
   let isInvIew = true;
 
@@ -12,10 +12,22 @@
   const options: Options = {};
 </script>
 
-<section use:inview={options} on:change={handleChange} id="header">
+<section
+  use:inview={options}
+  on:change={handleChange}
+  id="header"
+  class="relative z-10"
+>
   {#if isInvIew}
-    <StaticHeader />
+    <header class="header-base">
+      <HeaderNav showBee={false} />
+    </header>
   {:else}
-    <ScrollingHeader />
+    <header
+      transition:fade={{ duration: 300 }}
+      class="header-base bg-white shadow-sm fixed"
+    >
+      <HeaderNav showBee={true} />
+    </header>
   {/if}
 </section>
