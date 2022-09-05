@@ -1,7 +1,7 @@
 <script lang="ts">
   import { inview, Options } from "svelte-inview";
   import { fade } from "svelte/transition";
-  import HeaderNav from "./HeaderNav.svelte";
+  import HeaderNav from "@components/HeaderNav.svelte";
 
   let isInvIew = true;
 
