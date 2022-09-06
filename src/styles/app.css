@@ -22,4 +22,8 @@
   .btn {
     @apply bg-yellow rounded-full flex items-center justify-center p-2 w-44;
   }
+
+  .section-container {
+    @apply container mx-auto px-10 max-w-7xl;
+  }
 }

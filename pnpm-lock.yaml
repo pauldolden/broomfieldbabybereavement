@@ -10,12 +10,14 @@ specifiers:
   prettier: ^2.7.1
   prettier-plugin-astro: ^0.5.4
   svelte: ^3.46.4
+  svelte-carousel: ^1.0.20
   svelte-inview: ^3.0.1
 
 dependencies:
   '@astrojs/image': 0.5.0
   '@fontsource/poppins': 4.5.9
   astro: 1.1.5
+  svelte-carousel: 1.0.20
   svelte-inview: 3.0.1_svelte@3.50.0
 
 devDependencies:
@@ -1979,6 +1981,18 @@ packages:
       p-locate: 5.0.0
     dev: false
 
+  /lodash.clonedeep/4.5.0:
+    resolution: {integrity: sha512-H5ZhCF25riFd9uB5UCkVKo61m3S/xZk1x4wA6yp/L3RFP6Z/eHH1ymQcGLo7J3GMPfm0V/7m1tryHuGVxpqEBQ==}
+    dev: false
+
+  /lodash.get/4.4.2:
+    resolution: {integrity: sha512-z+Uw/vLuy6gQe8cfaFWD7p0wVv8fJl3mbzXh33RS+0oW2wvUqiRXiQ69gLWSLpgB5/6sU+r6BlQR0MBILadqTQ==}
+    dev: false
+
+  /lodash.isequal/4.5.0:
+    resolution: {integrity: sha512-pDo3lu8Jhfjqls6GkMgpahsF9kCyayhgykjyLMNFTKWrpVdAQtYyB4muAMWozBB4ig/dtWAmsMxLEI8wuz+DYQ==}
+    dev: false
+
   /log-symbols/5.1.0:
     resolution: {integrity: sha512-l0x2DvrW294C9uDCoQe1VSU4gf529FkSZ6leBl4TiqZH/e+0R7hSfHQBNut2mNygDgHwvYHfFLn6Oxb3VWj2rA==}
     engines: {node: '>=12'}
@@ -3416,6 +3430,12 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
+  /svelte-carousel/1.0.20:
+    resolution: {integrity: sha512-BP6LosKg1I8D741WmzS2/Q9bwu1DdMslGXUe8//kWeumXB87XSQChw62Vyo8yFtgKP287riYI3w3fSI+aU+gbA==}
+    dependencies:
+      simply-reactive: github.com/vadimkorr/simply-reactive/8d1ae831b2fbba1cf4446543f954b4efe28013e0
+    dev: false
+
   /svelte-hmr/0.14.12_svelte@3.50.0:
     resolution: {integrity: sha512-4QSW/VvXuqVcFZ+RhxiR8/newmwOCTlbYIezvkeN6302YFRE8cXy0naamHcjz8Y9Ce3ITTZtrHrIL0AGfyo61w==}
     engines: {node: ^12.20 || ^14.13.1 || >= 16}
@@ -3937,4 +3957,14 @@ packages:
 
   /zwitch/2.0.2:
     resolution: {integrity: sha512-JZxotl7SxAJH0j7dN4pxsTV6ZLXoLdGME+PsjkL/DaBrVryK9kTGq06GfKrwcSOqypP+fdXGoCHE36b99fWVoA==}
+    dev: false
+
+  github.com/vadimkorr/simply-reactive/8d1ae831b2fbba1cf4446543f954b4efe28013e0:
+    resolution: {tarball: https://codeload.github.com/vadimkorr/simply-reactive/tar.gz/8d1ae831b2fbba1cf4446543f954b4efe28013e0}
+    name: simply-reactive
+    version: 1.0.0
+    dependencies:
+      lodash.clonedeep: 4.5.0
+      lodash.get: 4.4.2
+      lodash.isequal: 4.5.0
     dev: false
