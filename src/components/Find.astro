@@ -1,7 +1,7 @@
 ---
-import { Image } from "@astrojs/image/components";
 import Clock from "@components/icons/Clock.svelte";
 import Pin from "@components/icons/Pin.svelte";
+import Map from "@components/Map.svelte";
 ---
 
 <section id="find">
@@ -32,13 +32,7 @@ import Pin from "@components/icons/Pin.svelte";
           </div>
         </div>
       </div>
-      <Image
-        class="rounded-lg"
-        src="/images/temp-map.jpg"
-        alt="Our Support"
-        width={500}
-        aspectRatio={500 / 320}
-      />
+      <Map />
     </div>
   </div>
 </section>
