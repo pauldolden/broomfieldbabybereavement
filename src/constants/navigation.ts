@@ -8,7 +8,7 @@ interface HeaderLinks {
 // Header Navigation Links
 export const HEADER_LINKS: HeaderLinks = {
   nav: [
-    { label: "Home", href: "/" },
+    { label: "Home", href: "#header" },
     { label: "About Us", href: "#about" },
     { label: "Gallery", href: "#gallery" },
     { label: "Contact", href: "#contact" },

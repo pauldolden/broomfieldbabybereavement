@@ -1,6 +1,14 @@
- <svg
-      width="36"
-      height="36"
+<script lang="ts">
+  import { HEADER_LINKS } from "@constants/navigation";
+
+  export let showBee: boolean;
+</script>
+
+<nav class="flex flex-1 justify-between">
+  <a href="/" style:visibility={showBee ? "visible" : "hidden"}>
+    <svg
+      width="30"
+      height="30"
       viewBox="0 0 30 30"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -14,3 +22,57 @@
         fill="#1E1E1E"
       />
     </svg>
+  </a>
+
+  <ul class="flex gap-[20px]">
+    {#each HEADER_LINKS.nav as link}
+      <li>
+        <a class="nav-item" href={link.href}>
+          {link.label}
+        </a>
+      </li>
+    {/each}
+  </ul>
+  <a
+    class="group nav-item w-[188px] bg-black text-white border-none items-center gap-[5px]"
+    href={HEADER_LINKS.find.href}
+  >
+    <svg
+      version="1.1"
+      id="Capa_1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      x="0px"
+      y="0px"
+      viewBox="0 0 492.452 492.452"
+      style="enable-background:new 0 0 492.452 492.452;"
+      xml:space="preserve"
+      height="14"
+      class="fill-yellow group-hover:fill-black"
+    >
+      <path
+        id="XMLID_152_"
+        d="M246.181,0C127.095,0,59.533,102.676,84.72,211.82c17.938,77.722,126.259,280.631,161.462,280.631
+c32.892,0,143.243-202.975,161.463-280.631C432.996,103.74,365.965,0,246.181,0z M246.232,224.97
+c-34.38,0-62.244-27.863-62.244-62.244c0-34.381,27.864-62.244,62.244-62.244c34.38,0,62.244,27.863,62.244,62.244
+C308.476,197.107,280.612,224.97,246.232,224.97z"
+      />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+    </svg>
+    {HEADER_LINKS.find.label}
+  </a>
+</nav>

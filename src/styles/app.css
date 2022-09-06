@@ -4,6 +4,26 @@
 
 @layer components {
   .nav-item {
-    @apply border-2 border-yellow rounded-full items-center flex justify-center w-[105px] px-[5px] h-[30px] text-[14px] hover:bg-yellow transition-colors;
+    @apply border-2 border-yellow rounded-full items-center flex justify-center w-24 px-1 h-7 text-sm hover:bg-yellow transition-colors;
+  }
+
+  .header-base {
+    @apply flex-1 bg-yellow-gra-start p-5 w-full flex justify-between items-center;
+  }
+
+  .section-title {
+    @apply font-bold text-3xl mb-4;
+  }
+
+  .body-text {
+    @apply font-light text-lg leading-7;
+  }
+
+  .btn {
+    @apply bg-yellow rounded-full flex items-center justify-center p-2 w-44;
+  }
+
+  .section-container {
+    @apply container mx-auto px-10 max-w-7xl;
   }
 }
