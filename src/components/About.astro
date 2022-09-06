@@ -3,9 +3,11 @@ import BeeRightAlt from "@components/BeeRightAlt.astro";
 import { Image } from "@astrojs/image/components";
 ---
 
-<section id="about" class="py-14 relative">
+<section id="about" class="py-16 relative">
   <div class="container mx-auto px-10 max-w-7xl">
-    <div class="grid grid-cols-2 grid-rows-2 gap-y-12 gap-x-24">
+    <div
+      class="flex flex-col lg:grid lg:grid-cols-2 grid-rows-2 gap-y-12 gap-x-24"
+    >
       <div>
         <h2 class="section-title">About Us</h2>
         <p class="body-text">
@@ -26,7 +28,7 @@ import { Image } from "@astrojs/image/components";
       />
       <div>
         <h2 class="section-title">Our Support</h2>
-        <p class="body-text">
+        <p class="body-text mb-8">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et neque
           sed risus finibus tempor. Pellentesque consectetur ex nec tortor
           bibendum sagittis. Etiam vehicula lacus sapien. Fusce non finibus
@@ -34,6 +36,7 @@ import { Image } from "@astrojs/image/components";
           placerat. Donec maximus convallis interdum. Donec suscipit mattis
           sapien ac ullamcorper. Integer vestibulum sapien ut ultrices pulvinar.
         </p>
+        <a class="btn" href="#contact"> Get In Touch</a>
       </div>
       <Image
         class="rounded-lg"

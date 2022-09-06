@@ -18,4 +18,8 @@
   .body-text {
     @apply font-light text-lg leading-7;
   }
+
+  .btn {
+    @apply bg-yellow rounded-full flex items-center justify-center p-2 w-44;
+  }
 }
