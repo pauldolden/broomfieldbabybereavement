@@ -7,7 +7,6 @@ specifiers:
   '@astrojs/tailwind': ^1.0.0
   '@fontsource/poppins': ^4.5.9
   astro: ^1.1.5
-  embla-carousel-svelte: ^7.0.2
   prettier: ^2.7.1
   prettier-plugin-astro: ^0.5.4
   svelte: ^3.46.4
@@ -18,7 +17,6 @@ dependencies:
   '@astrojs/image': 0.5.0
   '@fontsource/poppins': 4.5.9
   astro: 1.1.5
-  embla-carousel-svelte: 7.0.2_svelte@3.50.0
   svelte-inview: 3.0.1_svelte@3.50.0
 
 devDependencies:
@@ -1207,19 +1205,6 @@ packages:
 
   /electron-to-chromium/1.4.241:
     resolution: {integrity: sha512-e7Wsh4ilaioBZ5bMm6+F4V5c11dh56/5Jwz7Hl5Tu1J7cnB+Pqx5qIF2iC7HPpfyQMqGSvvLP5bBAIDd2gAtGw==}
-
-  /embla-carousel-svelte/7.0.2_svelte@3.50.0:
-    resolution: {integrity: sha512-rwNDpc5KqH6rlBodQf0VtSSGE8NJlYMydNQ/k5FEeTGqKvsp1oxCd6Dr7XDLGIkz+MAql4V429Xjf8fGabk7ZA==}
-    peerDependencies:
-      svelte: ^3.49.0
-    dependencies:
-      embla-carousel: 7.0.2
-      svelte: 3.50.0
-    dev: false
-
-  /embla-carousel/7.0.2:
-    resolution: {integrity: sha512-6SHKbLJRvcjunb0VT1Aw7YwK0Dw8ecqEa+ppT1j+kHGEg5I4WvUd8SjRkc1NAuQK0PTBD0d567UCmzEAngeAxw==}
-    dev: false
 
   /emmet/2.3.6:
     resolution: {integrity: sha512-pLS4PBPDdxuUAmw7Me7+TcHbykTsBKN/S9XJbUOMFQrNv9MoshzyMFK/R57JBm94/6HSL4vHnDeEmxlC82NQ4A==}

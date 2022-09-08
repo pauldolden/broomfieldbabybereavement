@@ -1,0 +1,25 @@
+---
+import { Image } from "@astrojs/image/components";
+
+const images = ["/images/about.jpg", "/images/about.jpg", "/images/about.jpg"];
+---
+
+<section id="gallery" class="h-[512px] bg-yellow py-20">
+  <div class="section-container flex flex-col items-center relative">
+    <h2 class="section-title text-center mb-0">Gallery</h2>
+    <div class="grid grid-cols-3 gap-x-7 py-7">
+      {
+        images.map((image) => (
+          <Image
+            class="rounded-lg"
+            src={image}
+            alt="gallery"
+            width={314}
+            aspectRatio={314 / 235}
+          />
+        ))
+      }
+    </div>
+    <a href="/gallery" class="btn bg-white">View All</a>
+  </div>
+</section>

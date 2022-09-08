@@ -3,7 +3,7 @@
 // It's something to do with the Image component, but it's not actually breaking anything.
 import About from "@components/About.astro";
 import Contact from "@components/Contact.astro";
-import Gallery from "@components/Gallery.svelte";
+import Gallery from "@components/Gallery.astro";
 import Hero from "@components/Hero.astro";
 import Layout from "@layouts/Layout.astro";
 ---
@@ -11,6 +11,6 @@ import Layout from "@layouts/Layout.astro";
 <Layout title="Broomfield Baby Bereavement">
   <Hero />
   <About />
-  <Gallery client:visible />
+  <Gallery />
   <Contact />
 </Layout>

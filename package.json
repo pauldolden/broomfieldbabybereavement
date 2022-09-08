@@ -13,7 +13,6 @@
     "@astrojs/image": "^0.5.0",
     "@fontsource/poppins": "^4.5.9",
     "astro": "^1.1.5",
-    "embla-carousel-svelte": "^7.0.2",
     "svelte-inview": "^3.0.1"
   },
   "devDependencies": {
