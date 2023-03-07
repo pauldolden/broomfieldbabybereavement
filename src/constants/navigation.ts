@@ -8,10 +8,10 @@ interface HeaderLinks {
 // Header Navigation Links
 export const HEADER_LINKS: HeaderLinks = {
   nav: [
-    { label: "Home", href: "#header" },
-    { label: "About Us", href: "#about" },
-    { label: "Gallery", href: "#gallery" },
-    { label: "Contact", href: "#contact" },
+    { label: "Home", href: "/#header" },
+    { label: "About Us", href: "/#about" },
+    { label: "Gallery", href: "/#gallery" },
+    { label: "Contact", href: "/#contact" },
     { label: "Resources", href: "/resources" },
   ],
   find: { label: "Where to find us", href: "#find" },
@@ -21,12 +21,12 @@ export const HEADER_LINKS: HeaderLinks = {
 export const FOOTER_LINKS: NavItem[][] = [
   [
     { label: "Home", href: "/" },
-    { label: "About Us", href: "#about" },
-    { label: "Gallery", href: "#gallery" },
+    { label: "About Us", href: "/#about" },
+    { label: "Gallery", href: "/#gallery" },
   ],
   [
-    { label: "Contact", href: "#contact" },
+    { label: "Contact", href: "/#contact" },
     { label: "Resources", href: "/resources" },
-    { label: "Where to find us", href: "#find" },
+    { label: "Where to find us", href: "/#find" },
   ],
 ];

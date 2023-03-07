@@ -1,18 +1,8 @@
----
-interface Props {
-  width?: number;
-  height?: number;
-}
-
-const { width = 265, height = 297 } = Astro.props as Props;
----
-
 <svg
-  width={width}
-  height={height}
   viewBox="0 0 265 297"
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
+  class="w-[85px] md:w-[140px] lg:w-[180px] xl:w-[265px] hidden lg:block"
 >
   <path
     d="M88.92 165.969L100.82 190.79L100.15 199.193L83.54 206.505L65.91 220.678L56.54 213.342C56.54 213.342 58.74 195.748 59.5 195.398C60.26 195.048 55.04 177.782 55.04 177.782L60.87 173.075L88.92 165.969Z"

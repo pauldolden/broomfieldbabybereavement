@@ -16,7 +16,7 @@
   use:inview={options}
   on:change={handleChange}
   id="header"
-  class="relative z-10"
+  class="relative z-10 hidden lg:block"
 >
   {#if isInvIew}
     <header class="header-base">
