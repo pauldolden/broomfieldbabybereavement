@@ -1,6 +1,12 @@
 ---
 import BeeRightAlt from "@components/BeeRightAlt.astro";
 import { Image } from "@astrojs/image/components";
+import { fetchSectionContent } from '../utils/fetchSectionContent'
+import type { TextWithImage } from '../models/TextWithImage'
+
+const blocks = await fetchSectionContent<TextWithImage>(fetch, '6b276z8ODYNSWYdBm5bQjG');
+console.log(blocks);
+
 ---
 
 <section id="about" class="py-20 relative">
@@ -8,24 +14,26 @@ import { Image } from "@astrojs/image/components";
     <div
       class="flex flex-col lg:grid lg:grid-cols-2 grid-rows-2 gap-y-12 gap-x-24"
     >
-      <div>
-        <h2 class="section-title">About Us</h2>
-        <p class="body-text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et neque
-          sed risus finibus tempor. Pellentesque consectetur ex nec tortor
-          bibendum sagittis. Etiam vehicula lacus sapien. Fusce non finibus
-          lectus. Proin vel ligula sem. Maecenas elementum eget quam ut
-          placerat. Donec maximus convallis interdum. Donec suscipit mattis
-          sapien ac ullamcorper. Integer vestibulum sapien ut ultrices pulvinar.
-        </p>
-      </div>
-      <Image
-        class="rounded-lg"
-        src="/images/about.jpg"
-        alt="About Us"
-        width={500}
-        aspectRatio={500 / 320}
-      />
+      {blocks.map((block: TextWithImage) => (
+            <div>
+              <h2 class="section-title">About Us</h2>
+              <p class="body-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et neque
+                sed risus finibus tempor. Pellentesque consectetur ex nec tortor
+                bibendum sagittis. Etiam vehicula lacus sapien. Fusce non finibus
+                lectus. Proin vel ligula sem. Maecenas elementum eget quam ut
+                placerat. Donec maximus convallis interdum. Donec suscipit mattis
+                sapien ac ullamcorper. Integer vestibulum sapien ut ultrices pulvinar.
+              </p>
+            </div>
+            <Image
+              class="rounded-lg"
+              src="/images/about.jpg"
+              alt="About Us"
+              width={500}
+              aspectRatio={500 / 320}
+            />
+      ))}
       <div>
         <h2 class="section-title">Our Support</h2>
         <p class="body-text mb-8">
