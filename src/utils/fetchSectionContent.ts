@@ -14,7 +14,6 @@ export async function fetchSectionContent<T extends PartialContentBlock>(
 
   const { fields } = data;
   const { contentBlocks } = fields;
-  console.log(contentBlocks)
 
   const blocks = await Promise.all(
     contentBlocks.map(async (block: T) => {

@@ -14,7 +14,6 @@ const images = await Promise.all(blocks.map(async (block) => {
   return image.fields.file.url.replace('//', 'https://');
 }));
 
- console.log(images);
 ---
 
 <section id="about" class="py-20 relative">
@@ -25,7 +24,7 @@ const images = await Promise.all(blocks.map(async (block) => {
       {blocks.map((block: TextWithImage, index: number) => (
         <div>
           <h2 class="section-title">{block.fields.title}</h2>
-          <div set:html={documentToHtmlString(block.fields.text)} class="body-text mb-8"></div>
+          <div set:html={documentToHtmlString(block.fields.text)} class="body-text mb-8 order-0"></div>
           {block.fields.showButton && <a class="btn" href={block.fields.buttonLink}>{block.fields.buttonText}</a>}
         </div>
         <Image

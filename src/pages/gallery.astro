@@ -1,9 +1,28 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import { fetchGallery } from "@utils/fetchGallery";
+import { Image } from "@astrojs/image/components";
+
+const images = await fetchGallery(fetch, { limit: 100 });
 ---
 
 <Layout title="BBB | Gallery">
   <div class="w-full bg-yellow-gra-end py-5">
     <h2 class="section-title text-center mb-0">Gallery</h2>
   </div>
+  <section class="section-container py-7">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      {
+        images.map((image) => (
+          <Image
+            class="rounded-lg"
+            src={image.fields.file.url}
+            alt={image.fields.title}
+            width={500}
+            aspectRatio={314 / 235}
+          />
+        ))
+      }
+    </div>
+  </section>
 </Layout>

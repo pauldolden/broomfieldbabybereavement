@@ -1,7 +1,12 @@
 ---
 import { Image } from "@astrojs/image/components";
+import { fetchGalleryPreview } from "../utils/fetchGalleryPreview";
 
-const images = ["/images/about.jpg", "/images/about.jpg", "/images/about.jpg"];
+const images = await fetchGalleryPreview(fetch, [
+  "2H9kJoizJ4NZyE9NwyYBzo",
+  "2BA2HOa4Tf9CPklbyDWsO3",
+  "7IUAr3s9URlexk5C0R528q",
+]);
 ---
 
 <section
@@ -15,8 +20,8 @@ const images = ["/images/about.jpg", "/images/about.jpg", "/images/about.jpg"];
         images.map((image) => (
           <Image
             class="rounded-lg"
-            src={image}
-            alt="gallery"
+            src={image.fields.file.url}
+            alt={image.fields.title}
             width={314}
             aspectRatio={314 / 235}
           />
