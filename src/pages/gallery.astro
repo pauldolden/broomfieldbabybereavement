@@ -16,7 +16,7 @@ const images = await fetchGallery(fetch, { limit: 100 });
         images.map((image) => (
           <Image
             class="rounded-lg"
-            src={image.fields.file.url}
+            src={image.fields.file.url.replace("//", "https://")}
             alt={image.fields.title}
             width={500}
             aspectRatio={314 / 235}
