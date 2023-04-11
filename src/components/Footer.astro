@@ -41,7 +41,7 @@ const { columns } = Astro.props;
 ---
 
 <footer class="bg-black py-8">
-  <div class="flex flex-row max-w-5xl mx-4 lg:mx-auto">
+  <div class="flex flex-col md:flex-row max-w-5xl mx-4 lg:mx-auto">
     <div class="flex-1">
       <h3 class="text-yellow text-lg font-semibold mb-2.5">Quicklinks</h3>
       <nav class="flex flex-row text-white">
@@ -60,28 +60,8 @@ const { columns } = Astro.props;
         }
       </nav>
     </div>
-    <div class="flex-0 text-right">
-      <div class="contact flex flex-row mb-8 justify-end">
-        {
-          contacts.map(({ href, imageSrc, alt }) => (
-            <a href={href} class="mr-4">
-              <Image
-                src={imageSrc}
-                width={iconSize}
-                height={iconSize}
-                alt={alt}
-                class={"svg-yellow"}
-              />
-            </a>
-          ))
-        }
-      </div>
-      <div class="text-yellow">Broomfield Baby Bereavement</div>
-      <div class="text-white">
-        <a href="https://speakeasy.team" title="Speakeasy Studio"
-          >Site by Speakeasy Studio</a
-        >
-      </div>
+    <div class="text-yellow mt-auto">
+      Broomfield Baby Bereavement Support Group
     </div>
   </div>
 </footer>

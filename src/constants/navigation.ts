@@ -10,9 +10,10 @@ export const HEADER_LINKS: HeaderLinks = {
   nav: [
     { label: "Home", href: "/#header" },
     { label: "About Us", href: "/#about" },
-    { label: "Gallery", href: "/#gallery" },
-    { label: "Contact", href: "/#contact" },
+    { label: "Events", href: "/events" },
     { label: "Resources", href: "/resources" },
+    { label: "Gallery", href: "/gallery" },
+    { label: "Contact", href: "/#contact" },
   ],
   find: { label: "Where to find us", href: "#find" },
 };
@@ -22,7 +23,8 @@ export const FOOTER_LINKS: NavItem[][] = [
   [
     { label: "Home", href: "/" },
     { label: "About Us", href: "/#about" },
-    { label: "Gallery", href: "/#gallery" },
+    { label: "Events", href: "/events" },
+    { label: "Gallery", href: "/gallery" },
   ],
   [
     { label: "Contact", href: "/#contact" },

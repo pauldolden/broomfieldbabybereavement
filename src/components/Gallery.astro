@@ -4,10 +4,13 @@ import { Image } from "@astrojs/image/components";
 const images = ["/images/about.jpg", "/images/about.jpg", "/images/about.jpg"];
 ---
 
-<section id="gallery" class="bg-yellow py-20 flex flex-col items-center justify-center">
+<section
+  id="gallery"
+  class="bg-yellow py-20 flex flex-col items-center justify-center"
+>
   <div class="section-container flex flex-col items-center relative">
     <h2 class="section-title text-center mb-0">Gallery</h2>
-    <div class="grid grid-cols-3 gap-x-7 py-7">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-7 py-7">
       {
         images.map((image) => (
           <Image

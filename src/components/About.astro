@@ -2,59 +2,40 @@
 import BeeRightAlt from "@components/BeeRightAlt.astro";
 import { Image } from "@astrojs/image/components";
 import { fetchSectionContent } from '../utils/fetchSectionContent'
+import { fetchEntry } from '../utils/fetchEntry'
 import type { TextWithImage } from '../models/TextWithImage'
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
 const blocks = await fetchSectionContent<TextWithImage>(fetch, '6b276z8ODYNSWYdBm5bQjG');
-console.log(blocks);
 
+const images = await Promise.all(blocks.map(async (block) => {
+  const image = await fetchEntry(block.fields.image.sys.id, fetch, 'asset');
+
+  return image.fields.file.url.replace('//', 'https://');
+}));
+
+ console.log(images);
 ---
 
 <section id="about" class="py-20 relative">
   <div class="section-container">
     <div
-      class="flex flex-col lg:grid lg:grid-cols-2 grid-rows-2 gap-y-12 gap-x-24"
+      class="flex flex-col lg:grid lg:grid-cols-2 grid-rows-auto gap-y-12 gap-x-24"
     >
-      {blocks.map((block: TextWithImage) => (
-            <div>
-              <h2 class="section-title">About Us</h2>
-              <p class="body-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et neque
-                sed risus finibus tempor. Pellentesque consectetur ex nec tortor
-                bibendum sagittis. Etiam vehicula lacus sapien. Fusce non finibus
-                lectus. Proin vel ligula sem. Maecenas elementum eget quam ut
-                placerat. Donec maximus convallis interdum. Donec suscipit mattis
-                sapien ac ullamcorper. Integer vestibulum sapien ut ultrices pulvinar.
-              </p>
-            </div>
-            <Image
-              class="rounded-lg"
-              src="/images/about.jpg"
-              alt="About Us"
-              width={500}
-              aspectRatio={500 / 320}
-            />
+      {blocks.map((block: TextWithImage, index: number) => (
+        <div>
+          <h2 class="section-title">{block.fields.title}</h2>
+          <div set:html={documentToHtmlString(block.fields.text)} class="body-text mb-8"></div>
+          {block.fields.showButton && <a class="btn" href={block.fields.buttonLink}>{block.fields.buttonText}</a>}
+        </div>
+        <Image
+          class="rounded-lg"
+          src={images[index]}
+          alt="About Us"
+          width={500}
+          aspectRatio={500 / 320}
+        />
       ))}
-      <div>
-        <h2 class="section-title">Our Support</h2>
-        <p class="body-text mb-8">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et neque
-          sed risus finibus tempor. Pellentesque consectetur ex nec tortor
-          bibendum sagittis. Etiam vehicula lacus sapien. Fusce non finibus
-          lectus. Proin vel ligula sem. Maecenas elementum eget quam ut
-          placerat. Donec maximus convallis interdum. Donec suscipit mattis
-          sapien ac ullamcorper. Integer vestibulum sapien ut ultrices pulvinar.
-        </p>
-        <a class="btn" href="#contact"> Get In Touch</a>
-      </div>
-      <Image
-        class="rounded-lg"
-        src="/images/support.jpg"
-        alt="Our Support"
-        width={500}
-        aspectRatio={500 / 320}
-      />
-    </div>
-  </div>
   <div class="absolute right-0 bottom-[50px]">
     <BeeRightAlt />
   </div>
