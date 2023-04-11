@@ -11,14 +11,17 @@
   },
   "dependencies": {
     "@astrojs/image": "^0.5.0",
+    "@contentful/rich-text-html-renderer": "^16.0.2",
     "@fontsource/poppins": "^4.5.9",
     "astro": "^1.1.5",
+    "contentful": "^9.3.3",
     "svelte-inview": "^3.0.1"
   },
   "devDependencies": {
     "@astrojs/sitemap": "^1.0.0",
     "@astrojs/svelte": "^1.0.0",
     "@astrojs/tailwind": "^1.0.0",
+    "@contentful/rich-text-types": "^16.0.3",
     "prettier": "^2.7.1",
     "prettier-plugin-astro": "^0.5.4",
     "svelte": "^3.46.4",
