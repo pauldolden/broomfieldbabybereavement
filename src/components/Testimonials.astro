@@ -5,10 +5,10 @@ import Testimonial from "@components/Testimonial.astro";
 const testimonials = await fetchEntries("testimonial", fetch);
 ---
 
-<div>
+<div class="w-screen py-10 px-10">
   {
     testimonials?.items.length > 0 ? (
-      <div class="grid grid-cols-3 gap-4">
+      <div class="grid-cols-1 md:grid-cols-2 grid lg:grid-cols-3 gap-4">
         {testimonials.items.map((testimonial) => (
           <Testimonial testimonial={testimonial.fields} />
         ))}

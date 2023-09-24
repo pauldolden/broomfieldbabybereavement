@@ -7,7 +7,7 @@ const resources: Resources = await fetchEntries("resource", fetch);
 const assets: Asset[] = resources.includes?.Asset;
 ---
 
-<div class="w-screen px-10">
+<div class="w-screen px-10 py-10">
   {
     resources.items.length === 0 ? (
       <p class="text-center col-span-3">
@@ -15,7 +15,7 @@ const assets: Asset[] = resources.includes?.Asset;
         check back soon.
       </p>
     ) : (
-      <div class="section-container grid grid-cols-3 py-10">
+      <div class="section-container grid-cols-1 md:grid-cols-2 grid lg:grid-cols-3 gap-4">
         {resources.items.map((resource: Item) => {
           const imageId = resource.fields.image?.sys.id;
           const assetId = resource.fields.asset?.sys.id;
