@@ -1,10 +1,11 @@
 ---
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 const { testimonial } = Astro.props;
+
 const borderColour =
-  testimonial.borderColour.length > 1 || testimonial.borderColour.length === 0
+  testimonial?.borderColour.length > 1 || testimonial?.borderColour.length === 0
     ? "Neutral"
-    : testimonial.borderColour[0];
+    : testimonial?.borderColour[0];
 ---
 
 <div
