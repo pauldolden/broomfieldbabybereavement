@@ -1,0 +1,25 @@
+---
+import { fetchEntries } from "../utils/fetchEntries";
+import Testimonial from "@components/Testimonial.astro";
+
+const testimonials = await fetchEntries("testimonial", fetch);
+---
+
+<div>
+  {
+    testimonials?.items.length > 0 ? (
+      <div class="grid grid-cols-3 gap-4">
+        {testimonials.items.map((testimonial) => (
+          <Testimonial testimonial={testimonial.fields} />
+        ))}
+      </div>
+    ) : (
+      <div>
+        <p class="text-center">
+          We are currently curating a list of testimonials from our community.
+          Please check back soon.
+        </p>
+      </div>
+    )
+  }
+</div>

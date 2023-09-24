@@ -7,6 +7,8 @@ module.exports = {
         sans: ["Poppins", "sans-serif"],
       },
       colors: {
+        "blaw-pink": "#E067A2",
+        "blaw-blue": "#245AA9",
         yellow: "#FFCB00",
         "yellow-gra-end": "#FDF2B1",
         "yellow-gra-start": "#FBFDEE",
@@ -15,7 +17,7 @@ module.exports = {
     },
   },
   plugins: [
-    function ({ addComponents, theme }) {
+    function({ addComponents, theme }) {
       addComponents({
         // Hack to add SVG colouring using filters: https://svgimagecolor.com/
         ".svg-yellow": {

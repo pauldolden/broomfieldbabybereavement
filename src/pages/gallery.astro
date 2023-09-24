@@ -4,6 +4,10 @@ import { fetchGallery } from "@utils/fetchGallery";
 import { Image } from "@astrojs/image/components";
 
 const images = await fetchGallery(fetch, { limit: 100 });
+
+const galleryImages = images.filter(
+  (image) => !image.metadata.tags.some((tag) => tag?.sys?.id === "exclude")
+);
 ---
 
 <Layout title="BBB | Gallery">
@@ -13,7 +17,7 @@ const images = await fetchGallery(fetch, { limit: 100 });
   <section class="section-container py-7">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
       {
-        images.map((image) => (
+        galleryImages.map((image) => (
           <Image
             class="rounded-lg"
             src={image.fields.file.url.replace("//", "https://")}

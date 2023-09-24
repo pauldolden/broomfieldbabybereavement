@@ -1,0 +1,41 @@
+---
+import type { Resources, Asset, Item } from "../types/resources";
+import ResourceCard from "@components/ResourceCard.astro";
+import { fetchEntries } from "../utils/fetchEntries";
+
+const resources: Resources = await fetchEntries("resource", fetch);
+const assets: Asset[] = resources.includes?.Asset;
+---
+
+<div class="w-screen px-10">
+  {
+    resources.items.length === 0 ? (
+      <p class="text-center col-span-3">
+        We are currently curating a list of resources for our community. Please
+        check back soon.
+      </p>
+    ) : (
+      <div class="section-container grid grid-cols-3 py-10">
+        {resources.items.map((resource: Item) => {
+          const imageId = resource.fields.image?.sys.id;
+          const assetId = resource.fields.asset?.sys.id;
+          return (
+            <ResourceCard
+              key={resource.sys.id}
+              title={resource.fields.name}
+              description={resource.fields.description}
+              link={resource.fields.url}
+              image={assets
+                .find((asset) => asset.sys.id === imageId)
+                ?.fields.file.url.replace("//", "https://")}
+              imageAlt={resource.fields.imageAltText}
+              asset={assets
+                .find((asset) => asset.sys.id === assetId)
+                ?.fields.file.url.replace("//", "https://")}
+            />
+          );
+        })}
+      </div>
+    )
+  }
+</div>

@@ -1,0 +1,25 @@
+---
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+const { testimonial } = Astro.props;
+const borderColour =
+  testimonial.borderColour.length > 1 || testimonial.borderColour.length === 0
+    ? "Neutral"
+    : testimonial.borderColour[0];
+---
+
+<div
+  class={`border-[2px] bg-neutral-100 p-4 rounded-lg shadow ${
+    borderColour === "Pink" ? "border-pink-500" : ""
+  } ${borderColour === "Blue" ? "border-blue-500" : ""} ${
+    borderColour === "Neutral" ? "border-yellow-gra-end" : ""
+  }`}
+>
+  <div class="flex gap-2">
+    <blockquote
+      class="italic class flex mb-2"
+      set:html={documentToHtmlString(testimonial.quote)}
+    >
+    </blockquote>
+  </div>
+  <p class="text-sm">- {testimonial.attribution}</p>
+</div>
