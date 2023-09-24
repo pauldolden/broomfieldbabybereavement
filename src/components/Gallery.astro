@@ -1,5 +1,5 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 import { fetchGalleryPreview } from "../utils/fetchGalleryPreview";
 
 const images = await fetchGalleryPreview(fetch, [
@@ -11,7 +11,7 @@ const images = await fetchGalleryPreview(fetch, [
 
 <section
   id="gallery"
-  class="bg-yellow py-10 md:py-20 flex flex-col items-center justify-center"
+  class="bg-yellow py-20 flex flex-col items-center justify-center"
 >
   <div class="section-container flex flex-col items-center relative">
     <h2 class="section-title text-center mb-0">Gallery</h2>
@@ -23,7 +23,7 @@ const images = await fetchGalleryPreview(fetch, [
             src={image.fields.file.url.replace("//", "https://")}
             alt={image.fields.title}
             width={314}
-            aspectRatio={314 / 235}
+            height={235}
           />
         ))
       }

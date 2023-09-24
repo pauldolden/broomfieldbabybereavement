@@ -1,13 +1,16 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import { chunkIntoThree } from "@utils/chunkIntoThree";
 import { fetchGallery } from "@utils/fetchGallery";
-import { Image } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 
 const images = await fetchGallery(fetch, { limit: 100 });
 
 const galleryImages = images.filter(
   (image) => !image.metadata.tags.some((tag) => tag?.sys?.id === "exclude")
 );
+
+const chunks = chunkIntoThree(galleryImages);
 ---
 
 <Layout title="BBB | Gallery">
@@ -15,16 +18,20 @@ const galleryImages = images.filter(
     <h2 class="section-title text-center mb-0">Gallery</h2>
   </div>
   <section class="section-container py-7">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div class="grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid gap-4">
       {
-        galleryImages.map((image) => (
-          <Image
-            class="rounded-lg"
-            src={image.fields.file.url.replace("//", "https://")}
-            alt={image.fields.title}
-            width={500}
-            aspectRatio={314 / 235}
-          />
+        chunks.map((chunk) => (
+          <div class="flex flex-col gap-4">
+            {chunk.map((image) => (
+              <Image
+                class="rounded-lg"
+                src={image.fields.file.url.replace("//", "https://")}
+                alt={image.fields.title}
+                width={image.fields.file.details.image.width}
+                height={image.fields.file.details.image.height}
+              />
+            ))}
+          </div>
         ))
       }
     </div>

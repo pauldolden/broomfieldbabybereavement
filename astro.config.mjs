@@ -1,6 +1,5 @@
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
-import image from "@astrojs/image";
 import sitemap from "@astrojs/sitemap";
 
 import svelte from "@astrojs/svelte";
@@ -11,5 +10,5 @@ export default defineConfig({
     config: {
       applyBaseStyles: false
     }
-  }), image(), sitemap(), svelte()]
+  }), sitemap(), svelte()]
 });

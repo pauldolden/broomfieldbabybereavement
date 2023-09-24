@@ -1,9 +1,5 @@
 ---
 import type { Link } from "@models/Link";
-import { Image } from "@astrojs/image/components";
-import telephoneImage from "@assets/icons/phone.svg";
-import emailImage from "@assets/icons/email.svg";
-import facebookImage from "@assets/icons/facebook.svg";
 
 export type Column = Link[];
 
@@ -16,26 +12,6 @@ export type ContactIcon = {
 export interface Props {
   columns: Column[];
 }
-
-const iconSize = 32;
-
-const contacts: ContactIcon[] = [
-  {
-    href: "tel:07123456789",
-    imageSrc: telephoneImage,
-    alt: "Phone Broomfield Baby Bereavement",
-  },
-  {
-    href: "mail:info@bbb.com",
-    imageSrc: emailImage,
-    alt: "Email Broomfield Baby Bereavement",
-  },
-  {
-    href: "https://facebook.com/BBB",
-    imageSrc: facebookImage,
-    alt: "Facebook page for Broomfield Baby Bereavement",
-  },
-];
 
 const { columns } = Astro.props;
 ---

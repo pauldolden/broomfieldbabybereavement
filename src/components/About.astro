@@ -1,6 +1,6 @@
 ---
 import BeeRightAlt from "@components/BeeRightAlt.astro";
-import { Image } from "@astrojs/image/components";
+import { Image } from 'astro:assets';
 import { fetchSectionContent } from '../utils/fetchSectionContent'
 import { fetchEntry } from '../utils/fetchEntry'
 import type { TextWithImage } from '../models/TextWithImage'
@@ -32,6 +32,7 @@ const images = await Promise.all(blocks.map(async (block) => {
           src={images[index]}
           alt="About Us"
           width={500}
+          height={320}
           aspectRatio={500 / 320}
         />
       ))}
