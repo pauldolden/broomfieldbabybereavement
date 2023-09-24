@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import { fetchGalleryPreview } from "../utils/fetchGalleryPreview";
 
 const images = await fetchGalleryPreview(fetch, [
@@ -18,12 +17,10 @@ const images = await fetchGalleryPreview(fetch, [
     <div class="grid grid-cols-1 md:grid-cols-3 gap-7 py-7">
       {
         images.map((image) => (
-          <Image
-            class="rounded-lg"
+          <img
+            class="rounded-lg cover h-[400px]"
             src={image.fields.file.url.replace("//", "https://")}
             alt={image.fields.title}
-            width={314}
-            height={235}
           />
         ))
       }
