@@ -7,7 +7,8 @@ import { Image } from "astro:assets";
 const images = await fetchGallery(fetch, { limit: 100 });
 
 const galleryImages = images.filter(
-  (image) => !image.metadata.tags.some((tag) => tag?.sys?.id === "exclude")
+  (image: any) =>
+    !image.metadata.tags.some((tag: any) => tag?.sys?.id === "exclude")
 );
 
 const chunks = chunkIntoThree(galleryImages);
