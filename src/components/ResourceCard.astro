@@ -7,11 +7,9 @@ const props = Astro.props;
     <img class="rounded-t-lg w-full contain" src={props.image} alt={props.imageAlt} />
   </a>
   <div class="p-5">
-    <a href="#">
-      <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">
-        {props.title}
-      </h5>
-    </a>
+    <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">
+      {props.title}
+    </h5>
     <p class="mb-3 font-normal text-dark">
       {props.description.content[0].content.map((item) => item.value).join("")}
     </p>
