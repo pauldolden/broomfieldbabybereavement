@@ -18,7 +18,7 @@ const images = await fetchGalleryPreview(fetch, [
       {
         images.map((image) => (
           <img
-            class="rounded-lg cover h-[400px]"
+            class="rounded-lg cover h-[400px] w-full object-cover"
             src={image.fields.file.url.replace("//", "https://")}
             alt={image.fields.title}
           />
